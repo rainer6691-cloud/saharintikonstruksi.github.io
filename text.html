@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Sahar Inti Konstruksi - Inovasi dan Kualitas</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan font Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff;
+        }
+
+        /* 1. Efek Dinamis Parallax untuk Hero Section */
+        #beranda {
+            /* URL Placeholder - Ganti dengan gambar langit atau konstruksi yang besar dan indah */
+            background-image: url('biru.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Kunci gambar latar belakang (efek Parallax) */
+            transition: background-position 0.3s ease;
+        }
+
+        /* 2. Kelas untuk Animasi Muncul (Fade-in-up) saat Scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3. Efek Hover untuk Kartu Layanan */
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 4. Styling untuk Carousel/Slider Proyek Sederhana */
+        .carousel-item {
+            width: 100%;
+            flex-shrink: 0;
+            display: none;
+            /* Transisi untuk pergantian slide yang lebih halus */
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-item.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar Responsif dan Efek Sticky -->
+    <header class="sticky top-0 z-50 bg-white shadow-xl transition duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo dan Nama Perusahaan -->
+            <a href="#beranda" class="flex items-center space-x-2">
+                <!-- Placeholder Logo - Ganti URL ini dengan path logo Anda setelah diunggah -->
+                <img src="logo.jpg"
+                     alt="Logo PT Sahar Inti Konstruksi"
+                     class="h-10 w-auto rounded-md shadow-md"
+                     onerror="this.onerror=null; this.src='https://placehold.co/150x40/1d4ed8/ffffff?text=SIK+Logo';"
+                >
+                <span class="text-xl font-bold text-blue-700 hidden md:inline">Sahar Inti Konstruksi</span>
+            </a>
+
+            <!-- Navigasi -->
+            <nav class="space-x-4">
+                <a href="#beranda" class="text-blue-600 hover:text-blue-800 font-medium transition duration-200">Beranda</a>
+                <a href="#layanan" class="text-gray-600 hover:text-blue-800 transition duration-200">Layanan</a>
+                <a href="#proyek" class="text-gray-600 hover:text-blue-800 transition duration-200">Proyek</a>
+                <a href="#kontak" class="text-gray-600 hover:text-blue-800 transition duration-200">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+
+        <!-- Bagian 1: Hero Section (Beranda) - Dengan Efek Parallax -->
+        <section id="beranda" class="relative py-20 md:py-40">
+            <!-- Overlay untuk membuat teks mudah dibaca -->
+            <div class="absolute inset-0 bg-blue-800/60 backdrop-blur-sm"></div>
+            <div class="container mx-auto px-4 text-center relative z-10 text-white">
+                <div class="fade-in-up">
+                    <h1 class="text-4xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">
+                        PT Sahar Inti Konstruksi
+                    </h1>
+                    <p class="text-lg md:text-3xl mb-10 font-light drop-shadow-md">
+                        Membangun Kualitas, Mengukir Kepercayaan di Setiap Proyek.
+                    </p>
+                    <a href="#kontak" class="inline-block bg-sky-400 text-white font-bold py-3 px-10 rounded-full shadow-2xl hover:bg-sky-500 transition duration-300 transform hover:scale-105 ring-4 ring-white/50">
+                        Konsultasi Proyek Gratis
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 2: Layanan Kami (Dengan Efek Hover dan Animasi Gulir) -->
+        <section id="layanan" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-12 fade-in-up">Fokus Layanan Kami</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Layanan 1: Infrastruktur Sipil -->
+                    <div class="fade-in-up delay-200 bg-blue-50 p-6 rounded-xl shadow-lg service-card border-b-4 border-blue-600">
+                        <div class="text-blue-600 text-4xl mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 mx-auto md:mx-0"><path d="M12 22a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v12a4 4 0 0 0 4 4z"/><path d="M9 4h6"/><path d="M12 18h.01"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Infrastruktur Sipil</h3>
+                        <p class="text-gray-600">Pembangunan jalan, jembatan, dan sarana umum lainnya dengan perencanaan yang matang.</p>
+                    </div>
+
+                    <!-- Layanan 2: Konstruksi Gedung -->
+                    <div class="fade-in-up delay-400 bg-blue-50 p-6 rounded-xl shadow-lg service-card border-b-4 border-blue-600">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 mx-auto md:mx-0"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4"/><path d="M15 22v-4"/><path d="M9 14h6"/><path d="M9 10h6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Konstruksi Gedung</h3>
+                        <p class="text-gray-600">Menciptakan bangunan komersial, industri, dan residensial yang aman dan modern.</p>
+                    </div>
+
+                    <!-- Layanan 3: Manajemen Proyek -->
+                    <div class="fade-in-up delay-600 bg-blue-50 p-6 rounded-xl shadow-lg service-card border-b-4 border-blue-600">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 mx-auto md:mx-0"><path d="m20 11-8-8-8 8"/><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><path d="M10 10V4"/><path d="M14 14h-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Manajemen & Mutu</h3>
+                        <p class="text-gray-600">Jaminan mutu, kepatuhan jadwal, dan pengawasan biaya yang efektif untuk setiap klien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 3: Proyek Pilihan (Slider Otomatis Dinamis) -->
+        <section id="proyek" class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-4 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-12">Portofolio Unggulan</h2>
+
+                <!-- Kontainer Carousel -->
+                <div class="relative max-w-4xl mx-auto">
+                    <div id="carousel" class="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-blue-300">
+
+                        <!-- Item 1 -->
+                        <div class="carousel-item p-6 md:p-8 bg-white/95" data-index="0">
+                            <div class="md:flex items-center">
+                                <img src="https://placehold.co/400x250/3b82f6/ffffff?text=Pusat+Bisnis+Baru"
+                                     alt="Proyek Pusat Bisnis" class="w-full md:w-1/2 rounded-lg shadow-xl mb-4 md:mb-0 md:mr-6 object-cover h-64">
+                                <div>
+                                    <h4 class="font-bold text-2xl text-blue-800 mb-2">Pusat Bisnis Terpadu</h4>
+                                    <p class="text-gray-600 mb-4">Pembangunan komplek perkantoran 15 lantai di kawasan strategis ibu kota. Fokus pada efisiensi energi.</p>
+                                    <span class="inline-block bg-blue-200 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Gedung Komersial</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="carousel-item p-6 md:p-8 bg-white/95" data-index="1">
+                            <div class="md:flex items-center">
+                                <img src="https://placehold.co/400x250/60a5fa/ffffff?text=Bendungan+Serbaguna"
+                                     alt="Proyek Bendungan" class="w-full md:w-1/2 rounded-lg shadow-xl mb-4 md:mb-0 md:mr-6 object-cover h-64">
+                                <div>
+                                    <h4 class="font-bold text-2xl text-blue-800 mb-2">Bendungan Serbaguna</h4>
+                                    <p class="text-gray-600 mb-4">Proyek sipil besar untuk irigasi dan pembangkit listrik tenaga air. Kualitas konstruksi diuji pada tekanan tinggi.</p>
+                                    <span class="inline-block bg-blue-200 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Infrastruktur Air</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="carousel-item p-6 md:p-8 bg-white/95" data-index="2">
+                            <div class="md:flex items-center">
+                                <img src="https://placehold.co/400x250/93c5fd/ffffff?text=Residensi+Eksklusif"
+                                     alt="Proyek Residensi" class="w-full md:w-1/2 rounded-lg shadow-xl mb-4 md:mb-0 md:mr-6 object-cover h-64">
+                                <div>
+                                    <h4 class="font-bold text-2xl text-blue-800 mb-2">Kluster Hunian Premium</h4>
+                                    <p class="text-gray-600 mb-4">Pembangunan 50 unit rumah eksklusif dengan konsep *smart home* dan material ramah lingkungan.</p>
+                                    <span class="inline-block bg-blue-200 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Residensial</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Tombol Navigasi Carousel -->
+                    <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-700/80 text-white p-3 rounded-full hover:bg-blue-800 transition shadow-xl ml-2 z-20">
+                        &lt;
+                    </button>
+                    <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-700/80 text-white p-3 rounded-full hover:bg-blue-800 transition shadow-xl mr-2 z-20">
+                        &gt;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 4: Kontak Kami -->
+        <section id="kontak" class="py-16 md:py-24 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center fade-in-up">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Siap Memulai Proyek Anda?</h2>
+                <p class="text-xl mb-10 opacity-90">
+                    Hubungi tim kami untuk konsultasi dan penawaran terbaik.
+                </p>
+                <div class="space-y-4 md:space-y-0 md:space-x-8">
+                    <!-- Email -->
+                    <a href="mailto:saharintikonstruksi@outlook.co.id" class="inline-block bg-sky-400 text-white font-bold py-3 px-8 rounded-full shadow-2xl hover:bg-sky-500 transition duration-300 transform hover:scale-105">
+                        Email Kami
+                        <span class="ml-2 text-sm">saharintikonstruksi@outlook.co.id</span>
+                    </a>
+                    <!-- Nomor Telepon yang Diperbarui -->
+                    <a href="tel:+6282199162999" class="inline-block border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        Telepon
+                        <span class="ml-2 text-sm">+62 821-9916-2999</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; <span id="currentYear"></span> PT Sahar Inti Konstruksi. Solusi Konstruksi Anda.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Dinamisme -->
+    <script>
+        // 1. Inisialisasi Tahun Saat Ini di Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 2. Skrip Intersection Observer untuk Animasi Gulir (Scroll Animation)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                const target = entry.target;
+                if (entry.isIntersecting) {
+                    // Beri penundaan berdasarkan data-delay
+                    const delay = parseInt(target.getAttribute('data-delay')) || 0;
+                    setTimeout(() => {
+                        target.classList.add('is-visible');
+                    }, delay);
+                    // Hentikan pengamatan setelah elemen terlihat
+                    observer.unobserve(target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // 3. Skrip Carousel/Slider Proyek Sederhana
+        let currentSlide = 0;
+        const carouselContainer = document.getElementById('carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalSlides = items.length;
+
+        function showSlide(index) {
+            // Pastikan indeks berada dalam batas
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
+            currentSlide = index;
+
+            // Logika sederhana untuk menampilkan slide: sembunyikan semua lalu tampilkan yang aktif
+            items.forEach((item, i) => {
+                if (i === currentSlide) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Event Listeners untuk Tombol
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Inisialisasi: Tampilkan slide pertama
+        showSlide(currentSlide);
+
+        // Auto-play
+        setInterval(nextSlide, 8000); // Ganti slide setiap 8 detik (terasa lebih smooth)
+        
+    </script>
+</body>
+</html>
